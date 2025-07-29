@@ -346,7 +346,7 @@ function New-HoneyGPPAutologon {
         [string]$HoneyPassword,
 
         [Parameter(Mandatory = $false)]
-        [string]$LinkTarget = (Get-ADDomain).DistinguishedName
+        [string]$LinkTarget
     )
 
     begin {
