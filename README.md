@@ -1,5 +1,5 @@
 # Active Directory Honeypot Deployment Toolkit
-This PowerShell script is designed to help Blue Teams and security researchers deploy a variety of Active Directory honeypots to detect unauthorized access, reconnaissance, or credential harvesting attempts in enterprise environments.
+This PowerShell script is designed to help Blue Teams and security researchers deploy a variety of Active Directory honeypots to detect unauthorized access, reconnaissance, or credential harvesting attempts in enterprise environments. I also wrote a [blogpost](https://blog.y00ga.lol/PERSO/CYBER/PUBLISH/Article+perso/Hardening+by+Deception+-+Deploying+Active+Directory+Honeypots) about it if you want to know more about those honeypot objects 
 
 ### Features
 The script supports deploying and monitoring several types of deceptive objects within an Active Directory (AD) domain, including:
@@ -35,7 +35,7 @@ These honeypots are intentionally misconfigured or made to appear vulnerable, pr
 | `New-KerberoastableHoneypotAccount`  | Creates a service account with a Service Principal Name (SPN). Triggers on Event ID 4769.                                   |
 | `New-HoneypotUserAccount`            | Deploys a user with no password and domain-level `Deny All` ACLs. Triggers on any login or access attempts.                 |
 | `New-PreW2K-HoneypotComputerAccount` | Simulates legacy machine accounts with known password (machine name). Useful against legacy brute-force and scanning tools. |
-| `New-HoneyGPPAutologon`              | Creates a GPO with fake plaintext credentials in SYSVOL. Triggers on access attempts or credential use.                     |
+| `New-HoneyGPOAutologon`              | Creates a GPO with fake plaintext credentials in SYSVOL. Triggers on access attempts or credential use.                     |
 | `Enable-AllGpoAuditing`              | Enables SACL auditing on all GPO folders in SYSVOL. Detects unauthorized reads (event 4662).                                |
 | \`New-HoneyGpoAccess                 |                                                                                                                             |
 
