@@ -333,7 +333,7 @@ function New-PreW2K-HoneypotComputerAccount {
 }
 
 
-function New-HoneyGPPAutologon {
+function New-HoneyGPOAutologon {
     [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'Medium')]
     param(
         [Parameter(Mandatory = $false)]
@@ -362,7 +362,7 @@ function New-HoneyGPPAutologon {
     }
 
     process {
-        if ($PSCmdlet.ShouldProcess($LinkTarget, "Deploy GPP Autologon Honeypot '$GpoName'")) {
+        if ($PSCmdlet.ShouldProcess($LinkTarget, "Deploy GPO Autologon Honeypot '$GpoName'")) {
             try {
                 if (Get-GPO -Name $GpoName -ErrorAction SilentlyContinue) {
                     Write-Error "A GPO with the name '$GpoName' already exists. Please choose a different name or remove the existing one."
