@@ -1,5 +1,5 @@
 # Active Directory Honeypot Deployment Toolkit
-This PowerShell script is designed to help Blue Teams and security researchers deploy a variety of Active Directory honeypots to detect unauthorized access, reconnaissance, or credential harvesting attempts in enterprise environments. I also wrote a [blogpost](https://blog.y00ga.lol/PERSO/CYBER/PUBLISH/Article+perso/Hardening+by+Deception+-+Deploying+Active+Directory+Honeypots) about it if you want to know more about those honeypot objects 
+This PowerShell script is designed to help Blue Teams and security researchers deploy a variety of Active Directory honeypots to detect unauthorized access, reconnaissance, or credential harvesting attempts in enterprise environments. I also wrote a [blogpost](https://blog.y00ga.lol/PERSO/PUBLISH/Article+perso/Hardening+by+Deception+-+Deploying+Active+Directory+Honeypots) about it if you want to know more about those honeypot objects 
 
 ### Features
 The script supports deploying and monitoring several types of deceptive objects within an Active Directory (AD) domain, including:
