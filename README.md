@@ -77,7 +77,6 @@ New-HoneyGpoAccessTrap -GpoName "Domain Admins - Password Policy"
 Enable-AllGpoAuditing
 ````
 
-Important: Always validate the OU paths and test in a lab before deploying to production.
+***Important*** : Always validate the OU paths and test in a lab before deploying to production.
 
-⚠️ Warning
-These honeypots are designed to look real and vulnerable, but should not be used in production environments without appropriate controls and monitoring in place. Misuse or incorrect deployment may inadvertently expose false credentials or create confusion.
+⚠️ These honeypots are designed to look real and vulnerable, but should not be used in production environments without appropriate controls and monitoring in place. Misuse or incorrect deployment may inadvertently expose false credentials or create confusion.
