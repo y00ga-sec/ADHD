@@ -29,28 +29,30 @@ These honeypots are intentionally misconfigured or made to appear vulnerable, pr
 
 ### Functions Overview
 
-Function	Description
-New-ASRepRoastableHoneypotAccount	Creates a user without Kerberos pre-authentication. Triggers on Event ID 4768 with failure code 0x18 or 0x19.
-New-KerberoastableHoneypotAccount	Creates a service account with a Service Principal Name (SPN). Triggers on Event ID 4769.
-New-HoneypotUserAccount	Deploys a user with no password and domain-level Deny All ACLs. Triggers on any login or access attempts.
-New-PreW2K-HoneypotComputerAccount	Simulates legacy machine accounts with known password (machine name). Useful against legacy brute-force and scanning tools.
-New-HoneyGPPAutologon	Creates a GPO with fake plaintext credentials in SYSVOL. Triggers on access attempts or credential use.
-Enable-AllGpoAuditing	Enables SACL auditing on all GPO folders in SYSVOL. Detects unauthorized reads (event 4662).
-New-HoneyGpoAccessTrap	Creates a fake GPO to lure and detect access. Combine with auditing for visibility into attacker behavior.
+| Function                             | Description                                                                                                                 |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `New-ASRepRoastableHoneypotAccount`  | Creates a user without Kerberos pre-authentication. Triggers on Event ID 4768 with failure code 0x18 or 0x19.               |
+| `New-KerberoastableHoneypotAccount`  | Creates a service account with a Service Principal Name (SPN). Triggers on Event ID 4769.                                   |
+| `New-HoneypotUserAccount`            | Deploys a user with no password and domain-level `Deny All` ACLs. Triggers on any login or access attempts.                 |
+| `New-PreW2K-HoneypotComputerAccount` | Simulates legacy machine accounts with known password (machine name). Useful against legacy brute-force and scanning tools. |
+| `New-HoneyGPPAutologon`              | Creates a GPO with fake plaintext credentials in SYSVOL. Triggers on access attempts or credential use.                     |
+| `Enable-AllGpoAuditing`              | Enables SACL auditing on all GPO folders in SYSVOL. Detects unauthorized reads (event 4662).                                |
+| \`New-HoneyGpoAccess                 |                                                                                                                             |
+
 
 ### Monitoring Guide
 Make sure to configure your SIEM or log monitoring solution to watch for:
 
-Event ID	Description
-4624/4625	Successful or failed login attempts to honeypot accounts
-4662	Attempted object property access (read/write)
-4768	Kerberos TGT request (with or without pre-auth)
-4769	Kerberos service ticket request for SPNs
-File Access	Read access to SYSVOL files (for GPP/GPO traps)
+| Event ID    | Description                                              |
+| ----------- | -------------------------------------------------------- |
+| 4624 / 4625 | Successful or failed login attempts to honeypot accounts |
+| 4662        | Attempted object property access (read/write)            |
+| 4768        | Kerberos TGT request (with or without pre-auth)          |
+| 4769        | Kerberos service ticket request for SPNs                 |
+| File Access | Read access to SYSVOL files (for GPP/GPO traps)          |
+
 
 ### Usage Examples
-
-powershell
 
 ````
 # Create an AS-REP roasting honeypot
